@@ -1,0 +1,19 @@
+{
+  "name": "spotify-badge",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "lint": "oxlint && oxfmt --check .",
+    "lint:fix": "oxlint --fix && oxfmt ."
+  },
+  "dependencies": {
+    "hono": "^4.12.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260305.1",
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "wrangler": "^4.71.0"
+  }
+}

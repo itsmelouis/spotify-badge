@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "spotify-badge",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-12-23",
+  "routes": [
+    {
+      "pattern": "spotify.itslouis.dev/*",
+      "zone_name": "itslouis.dev",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "SPOTIFY_CACHE",
+      "id": "1c6cccaab6ca492aa4839b232d30cf81",
+    },
+  ],
+}
