@@ -16,6 +16,7 @@ bun run lint:fix     # auto-fix lint and formatting issues
 Cloudflare Worker (Hono + TypeScript) that serves `GET /banner.svg` — a dynamic SVG showing the currently playing Spotify track, designed to be embedded in a GitHub README via `<img>`.
 
 **Request flow:**
+
 ```
 GET /banner.svg
   → KV cache hit? → return cached SVG
@@ -28,12 +29,14 @@ GET /banner.svg
 ```
 
 **Key design decisions:**
+
 - Album art is base64-embedded in the SVG (GitHub blocks external `<img>` sources inside SVGs)
 - `Cache-Control: no-cache` on responses so GitHub doesn't cache the SVG on its CDN
 - `Bindings` type is declared manually in `src/types.ts` (not generated via `wrangler types`)
 - KV namespace binding: `SPOTIFY_CACHE` (id in `wrangler.jsonc`)
 
 **Required Cloudflare secrets** (set via `wrangler secret put`):
+
 - `SPOTIFY_CLIENT_ID`
 - `SPOTIFY_CLIENT_SECRET`
 - `SPOTIFY_REFRESH_TOKEN`
