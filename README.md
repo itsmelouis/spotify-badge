@@ -2,8 +2,8 @@
 
 # spotify-badge
 
-[![CI](https://img.shields.io/github/actions/workflow/status/itsmelouis/spotify-badge/ci.yml?label=CI&style=flat-square)](https://github.com/itsmelouis/spotify-badge/actions/workflows/ci.yml)
-[![Deploy](https://img.shields.io/github/actions/workflow/status/itsmelouis/spotify-badge/deploy.yml?label=Deploy&style=flat-square)](https://github.com/itsmelouis/spotify-badge/actions/workflows/deploy.yml)
+[![CI](https://github.com/itsmelouis/spotify-badge/actions/workflows/ci.yml/badge.svg)](https://github.com/itsmelouis/spotify-badge/actions/workflows/ci.yml)
+[![CD](https://github.com/itsmelouis/spotify-badge/actions/workflows/deploy.yml/badge.svg)](https://github.com/itsmelouis/spotify-badge/actions/workflows/deploy.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](./LICENSE)
 [![Bun](https://img.shields.io/badge/bun-v1.3+-black?style=flat-square&logo=bun)](https://bun.com)
 [![Cloudflare Workers](https://img.shields.io/badge/cloudflare-workers-f38020?style=flat-square&logo=cloudflare)](https://workers.cloudflare.com)
