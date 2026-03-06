@@ -11,6 +11,8 @@ bun run lint         # oxlint + oxfmt --check
 bun run lint:fix     # auto-fix lint and formatting issues
 ```
 
+**Always run `bun run lint` before committing.** The CI enforces both oxlint and oxfmt on every push and PR to main — commits that skip this check will fail. If lint reports format issues, run `bun run lint:fix` to auto-fix them, then re-stage the modified files before committing.
+
 ## Architecture
 
 Cloudflare Worker (Hono + TypeScript) that serves `GET /banner.svg` — a dynamic SVG showing the currently playing Spotify track, designed to be embedded in a GitHub README via `<img>`.
