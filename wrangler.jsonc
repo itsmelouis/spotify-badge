@@ -9,6 +9,9 @@
       "custom_domain": true,
     },
   ],
+  "observability": {
+    "enabled": true,
+  },
   "kv_namespaces": [
     {
       "binding": "SPOTIFY_CACHE",

@@ -35,7 +35,8 @@ async function getAccessToken(env: Bindings): Promise<string> {
   clear();
 
   if (!res.ok) {
-    throw new Error(`Spotify token error: ${res.status}`);
+    const body = await res.text().catch(() => "");
+    throw new Error(`Spotify token error: ${res.status} ${body.slice(0, 300)}`);
   }
 
   const data = (await res.json()) as SpotifyTokenResponse;
@@ -58,6 +59,8 @@ export async function getNowPlaying(env: Bindings): Promise<NowPlaying> {
     }
 
     if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      console.error(`Spotify now-playing error: ${res.status} ${body.slice(0, 300)}`);
       return { status: "error" };
     }
 
@@ -82,7 +85,8 @@ export async function getNowPlaying(env: Bindings): Promise<NowPlaying> {
         isPlaying: data.is_playing,
       },
     };
-  } catch {
+  } catch (error) {
+    console.error("Spotify request failed:", error instanceof Error ? error.message : error);
     return { status: "error" };
   }
 }
